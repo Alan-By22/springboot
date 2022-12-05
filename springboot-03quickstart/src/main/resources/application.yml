@@ -1,0 +1,13 @@
+person:
+  name: 李四666
+  age: 24
+stu:
+  name: 憨憨
+  age: 19
+  birthday: 2000/01/01
+  map: { "aa": 1,"bb": 2 }
+  list:
+    - catName: 猫猫
+      color: red
+    - catName: 狗狗
+      color: blue
