@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--thymeleaf的语法-->
+<!--<p th:text="${msg}">我是p标签</p>-->
+<table>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>住址</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}">李四</td>
+        <td th:text="${user.age}">23</td>
+        <td th:text="${user.address}">西安</td>
+    </tr>
+</table>
+</body>
+</html>
