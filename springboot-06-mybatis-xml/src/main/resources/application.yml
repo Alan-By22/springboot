@@ -1,0 +1,24 @@
+#pring:
+# datasource:
+#   driver-class-name: com.mysql.cj.jdbc.Driver
+#   url: jdbc:mysql:///mybatis
+#   username: root
+#   password: 123456789
+#   type: com.alibaba.druid.pool.DruidDataSource
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///mybatis
+      username: root
+      password: 123456789
+
+
+mybatis:
+  # 加载核心配置文件
+  config-location: classpath:/mybatis/mybatis-config.xml
+  # 加载映射配置文件
+  mapper-locations: classpath:/mybatis/UserMapper.xml
+  # 起别名
+  type-aliases-package: com.ithuipu.pojo
