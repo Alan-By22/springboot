@@ -1,5 +1,7 @@
 package com.ithuipu;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ithuipu.dao.UserDao;
@@ -19,6 +21,32 @@ class Springboot07Mybatisplus01ApplicationTests {
      */
     @Autowired
     private UserDao userDao;
+
+    /**
+     * 条件查询
+     */
+    @Test
+    void testSelectAll() {
+        /**方式一*/
+        /*QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lt("age",20);
+        List<User> list = userDao.selectList(queryWrapper);
+        System.out.println(list);*/
+
+        /**方式二-2.lambda*/
+       /* QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        //方法引用.避免字段写错的问题
+        queryWrapper.lambda().lt(User::getAge, 20);   //lt < gt >
+        List<User> list1 = userDao.selectList(queryWrapper);
+        System.out.println(list1);*/
+
+        /**3.lambda*/
+        LambdaQueryWrapper<User> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(User::getName,"Tom").gt(User::getAge,23);
+        List<User> list = userDao.selectList(lambdaQueryWrapper);
+        System.out.println(list);
+    }
+
 
     /**
      * 查询
@@ -86,10 +114,10 @@ class Springboot07Mybatisplus01ApplicationTests {
         //分页
         //<E extends IPage<T>> E selectPage(E page, @Param(Constants.WRAPPER) Wrapper<T> queryWrapper);
         //需要插件--导入limit
-        IPage<User> page = new Page<>(1,2);
-        userDao.selectPage(page,null);
-        System.out.println("总记录数:"+page.getTotal());
-        System.out.println("当前页数据的集合:"+page.getRecords());
+        IPage<User> page = new Page<>(1, 2);
+        userDao.selectPage(page, null);
+        System.out.println("总记录数:" + page.getTotal());
+        System.out.println("当前页数据的集合:" + page.getRecords());
     }
 
 }

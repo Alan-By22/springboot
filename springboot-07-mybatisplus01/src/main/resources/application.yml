@@ -5,3 +5,7 @@ spring:
       url: jdbc:mysql:///mybatisplus
       username: root
       password: 123456789
+# 开启mp的日志打印
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
