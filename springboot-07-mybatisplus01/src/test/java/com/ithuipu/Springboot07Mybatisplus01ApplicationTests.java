@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class Springboot07Mybatisplus01ApplicationTests {
@@ -23,7 +24,25 @@ class Springboot07Mybatisplus01ApplicationTests {
     private UserDao userDao;
 
     /**
-     * 条件查询
+     * 查询的映射
+     */
+    @Test
+    public void select() {
+        //默认查询--* 查询全部---指定字段
+       /* LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+        lqw.select(User::getAge, User::getName);
+        List<User> list = userMapper.selectList(lqw);
+        System.out.println(list);*/
+
+        QueryWrapper<User> qw = new QueryWrapper<>();
+        qw.select("count(*) as count,name");
+        qw.groupBy("name");
+        List<Map<String, Object>> mapList = userDao.selectMaps(qw);
+        System.out.println(mapList);
+    }
+
+    /**
+     * 条件查询的方式
      */
     @Test
     void testSelectAll() {
@@ -42,7 +61,7 @@ class Springboot07Mybatisplus01ApplicationTests {
 
         /**3.lambda*/
         LambdaQueryWrapper<User> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper.eq(User::getName,"Tom").gt(User::getAge,23);
+        lambdaQueryWrapper.eq(User::getName, "Tom").gt(User::getAge, 23);
         List<User> list = userDao.selectList(lambdaQueryWrapper);
         System.out.println(list);
     }
