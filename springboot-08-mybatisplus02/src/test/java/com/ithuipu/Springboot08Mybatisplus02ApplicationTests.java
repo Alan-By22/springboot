@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
@@ -20,6 +21,37 @@ class Springboot08Mybatisplus02ApplicationTests {
      */
     @Autowired
     private UserDao userDao;
+
+    /**
+     * 逻辑删除
+     */
+    @Test
+    void contextLoads6() {
+        /**逻辑删除*/
+        //userDao.deleteById(6L);
+        //2.查询
+        //SELECT id,name,age,flag FROM t_user WHERE flag=0
+        List<User> list = userDao.selectList(null);
+        System.out.println(list);
+    }
+
+
+
+    /**
+     * 批量操作
+     */
+    @Test
+    void contextLoads5() {
+        /**批量删除*/
+        /*Long[] longs = {4L,5L};
+        userDao.deleteBatchIds(Arrays.asList(longs));*/
+        /**批量查询*/
+        Long[] longs = {1L,2L};
+        List<User> list = userDao.selectBatchIds(Arrays.asList(longs));
+        System.out.println(list);
+    }
+
+
 
     /**
      * 主键策略
