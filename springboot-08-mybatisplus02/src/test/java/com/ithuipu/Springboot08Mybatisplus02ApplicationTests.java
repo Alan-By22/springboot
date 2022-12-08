@@ -22,6 +22,20 @@ class Springboot08Mybatisplus02ApplicationTests {
     private UserDao userDao;
 
     /**
+     * 主键策略
+     */
+    @Test
+    void contextLoads4() {
+        //添加--测试主键策略
+        User user = new User();
+        user.setName("景宝");
+        user.setAge(27);
+        userDao.insert(user);
+        //雪花算法生成的id
+    }
+
+
+    /**
      * 条件查询
      */
     @Test

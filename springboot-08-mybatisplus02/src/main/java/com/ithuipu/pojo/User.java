@@ -1,6 +1,8 @@
 package com.ithuipu.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -14,6 +16,7 @@ import lombok.Data;
 @Data
 //@TableName("t_user")
 public class User {
+    @TableId(type = IdType.AUTO)//IdType.AUTO使用数据库的自增主键策略
     private Long id;
     private String name;
 
