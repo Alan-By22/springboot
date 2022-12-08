@@ -35,4 +35,8 @@ public class User {
     /**逻辑删除*/
     //@TableLogic(value = "0",delval = "1")
     private Integer flag;
+
+    /**乐观锁*/
+    @Version
+    private Integer version;
 }

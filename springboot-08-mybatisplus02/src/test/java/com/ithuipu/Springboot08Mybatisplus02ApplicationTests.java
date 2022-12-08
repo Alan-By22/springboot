@@ -23,6 +23,36 @@ class Springboot08Mybatisplus02ApplicationTests {
     private UserDao userDao;
 
     /**
+     * 乐观锁--修改
+     */
+    @Test
+    void contextLoads7() {
+        //两个人AA BB操作
+        /*User user1 = userDao.selectById(1L);
+        user1.setName("AA");
+        //2.
+        userDao.updateById(user1);
+
+        User user2 = userDao.selectById(1L);
+        user2.setName("BB");
+        //2.
+        userDao.updateById(user2);*/
+
+        //优化----------------------------------------------------
+        User user1 = userDao.selectById(2L);
+        User user2 = userDao.selectById(2L);
+
+        //AA修改
+        user1.setName("AA");
+        userDao.updateById(user1);
+
+        //BB修改
+        user2.setName("BB");
+        userDao.updateById(user2);
+    }
+
+
+    /**
      * 逻辑删除
      */
     @Test
