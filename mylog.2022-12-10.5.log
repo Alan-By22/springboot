@@ -1,0 +1,24 @@
+2022-12-10 17:35:29.218 DEBUG 21472 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/sayHello2", parameters={}
+2022-12-10 17:35:29.220 DEBUG 21472 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ithuipu.controller.MyController2#sayHello()
+2022-12-10 17:35:29.220  INFO 21472 --- [http-nio-8080-exec-3] com.ithuipu.controller.MyController2     : info------
+2022-12-10 17:35:29.220  WARN 21472 --- [http-nio-8080-exec-3] com.ithuipu.controller.MyController2     : warn------
+2022-12-10 17:35:29.220 ERROR 21472 --- [http-nio-8080-exec-3] com.ithuipu.controller.MyController2     : error------
+2022-12-10 17:35:29.221 DEBUG 21472 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-12-10 17:35:29.230 DEBUG 21472 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<h2>sayHello----SpringBoot</h2>"]
+2022-12-10 17:35:29.230 DEBUG 21472 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-10 17:35:29.357 DEBUG 21472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/sayHello2", parameters={}
+2022-12-10 17:35:29.358 DEBUG 21472 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ithuipu.controller.MyController2#sayHello()
+2022-12-10 17:35:29.358  INFO 21472 --- [http-nio-8080-exec-1] com.ithuipu.controller.MyController2     : info------
+2022-12-10 17:35:29.358  WARN 21472 --- [http-nio-8080-exec-1] com.ithuipu.controller.MyController2     : warn------
+2022-12-10 17:35:29.358 ERROR 21472 --- [http-nio-8080-exec-1] com.ithuipu.controller.MyController2     : error------
+2022-12-10 17:35:29.358 DEBUG 21472 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-12-10 17:35:29.358 DEBUG 21472 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<h2>sayHello----SpringBoot</h2>"]
+2022-12-10 17:35:29.359 DEBUG 21472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-10 17:35:31.456 DEBUG 21472 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/sayHello", parameters={}
+2022-12-10 17:35:31.456 DEBUG 21472 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ithuipu.controller.MyController#sayHello()
+2022-12-10 17:35:31.456  INFO 21472 --- [http-nio-8080-exec-2] com.ithuipu.controller.MyController      : info------
+2022-12-10 17:35:31.456  WARN 21472 --- [http-nio-8080-exec-2] com.ithuipu.controller.MyController      : warn------
+2022-12-10 17:35:31.456 ERROR 21472 --- [http-nio-8080-exec-2] com.ithuipu.controller.MyController      : error------
+2022-12-10 17:35:31.457 DEBUG 21472 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-12-10 17:35:31.457 DEBUG 21472 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<h2>sayHello----SpringBoot</h2>"]
+2022-12-10 17:35:31.457 DEBUG 21472 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

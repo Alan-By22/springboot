@@ -1,0 +1,24 @@
+debug: true
+#开启debug级别,输出吊事信息,用于检查系统的运行状况
+
+
+#设置日志的级别,root表示根节点,项目的整体的日志级别
+logging:
+  level:
+    root: info
+  #日志的输出格式  时间+日志级别+pid+线程名+全类名+日志信息
+  #  pattern:
+  #    console: "%d - %m%n"     #d 日期,m 时间,n 换行
+  #记录日志的文件
+  file:
+    name: mylog.log
+
+
+
+  logback:
+    rollingpolicy:
+      max-file-size: 3KB
+      file-name-pattern: mylog.%d{yyyy-MM-dd}.%i.log
+#开发中日志的记录,不会讲所有的日志记录到一个文件
+#采用设置文件的大小,来进行滚动记录
+#结合全局的异常处理,不同的异常记录不同的异常日志文件
