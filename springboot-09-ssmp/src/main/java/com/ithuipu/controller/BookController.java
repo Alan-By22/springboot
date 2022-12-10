@@ -44,8 +44,13 @@ public class BookController {
      * 2.分页查询
      */
     @GetMapping("/{currentPage}/{pageSize}")
-    public Result getPage(@PathVariable Integer currentPage, @PathVariable Integer pageSize) {
-        Page<Book> page = iBookService.page(new Page<Book>(currentPage, pageSize));
+    public Result getPage(@PathVariable Integer currentPage, @PathVariable Integer pageSize, Book book) {
+        //Page<Book> page = iBookService.page(new Page<Book>(currentPage, pageSize));
+        Page<Book> page = iBookService.findByPage(new Page<Book>(currentPage, pageSize), book);
+        //解决删除最后一页的最后一条消息的bug(会停留在删除页,但是无信息),解决后会跳转前一页
+        if (currentPage > page.getPages()) {
+            page = iBookService.findByPage(new Page<Book>(page.getPages(), pageSize), book);
+        }
         return new Result(true, page);
     }
 

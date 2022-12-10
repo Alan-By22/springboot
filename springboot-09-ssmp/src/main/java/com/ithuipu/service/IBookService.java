@@ -1,5 +1,6 @@
 package com.ithuipu.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ithuipu.pojo.Book;
 
@@ -20,4 +21,6 @@ public interface IBookService extends IService<Book> {
      * save Book
      */
     void saveBook(Book book);
+
+    Page<Book> findByPage(Page page ,Book book);
 }
