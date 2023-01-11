@@ -1,0 +1,6 @@
+spring:
+  redis:
+    host: 192.168.61.4
+    port: 6379
+    client-type: jedis
+#    client-type: lettuce  默认
